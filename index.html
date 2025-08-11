@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>panita.ciencia - Educación Interactiva</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    <!-- MathJax v3 Configuration -->
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">panita.ciencia</div>
+            <ul class="nav-links">
+                <li><a href="#" id="nav-fisica">Física I</a></li>
+                <li><a href="#" class="disabled-link">Principios de Química I</a></li>
+                <li><a href="#" class="disabled-link">Matemática I</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- VISTA 1: PÁGINA DE INICIO (Visible por defecto) -->
+        <!-- Este elemento es persistente y solo se oculta/muestra. -->
+        <section class="hero-section" id="home-view">
+            <h1>Bienvenido ¡Mi panita! 👋🏻</h1>
+            </p>Proyecto independiente desarrollado por y para estudiantes de la Facultad de Ciencias</p>
+            <div class="subject-selector">
+                <button class="subject-card" id="select-fisica">
+                    <h2>Física I</h2>
+                    <p>Desde  cinemática hasta Trabajo y energía.</p>
+                </button>
+                <button class="subject-card" disabled>
+                    <h2>Principios de Química I</h2>
+                    <p>Próximamente...</p>
+                </button>
+                <button class="subject-card" disabled>
+                    <h2>Matemática I</h2>
+                    <p>Próximamente...</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- VISTA 2: CONTENIDO DINÁMICO (Oculto por defecto) -->
+        <!-- Aquí se renderizarán los hubs de materia y los temas. -->
+        <div class="content-wrapper" id="content-view" style="display: none;">
+            <!-- Este contenedor se llenará con JavaScript -->
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 panita.ciencia. Desarrollado por Gerardo Rondón.</p>
+    </footer>
+
+    <!-- Estructura del Modal Genérico (Oculto por defecto) -->
+    <div class="modal-overlay" id="solution-modal-overlay"></div>
+    <div class="modal" id="solution-modal">
+        <button class="modal-close-btn" aria-label="Cerrar solución">&times;</button>
+        <div class="modal-content" id="solution-modal-content">
+            <!-- El contenido de la solución se inyectará aquí -->
+        </div>
+    </div>
+
+    <!-- ÚNICO SCRIPT CARGADO. ES DE TIPO 'module' -->
+    <script src="js/general-control.js" type="module"></script>
+</body>
+</html>

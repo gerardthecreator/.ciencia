@@ -1,0 +1,93 @@
+/* styles/main.css */
+
+:root {
+    --color-bg-main: #25344F;
+    --color-secondary: #617891;
+    --color-primary-accent: #D5B893;
+    --color-button: #6F4D38;
+    --color-secondary-accent: #EFE2CF;
+    --color-text: #f4f4f4;
+    --color-text-dark: #333;
+
+    --font-headings: 'Anton', sans-serif;
+    --font-body: 'Oswald', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-main);
+    color: var(--color-text);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    color: var(--color-primary-accent);
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: var(--color-primary-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secondary-accent);
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Clases de resaltado */
+.text-highlight {
+    color: var(--color-primary-accent);
+    font-weight: 700;
+}
+
+.text-concept {
+    background-color: rgba(239, 226, 207, 0.1);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Para que las fórmulas no rompan el layout en móviles */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px; /* Espacio para la barra de scroll */
+}
+/* styles/main.css */
+
+/* ... tus estilos existentes ... */
+
+main {
+    /* MODIFICADO: Usamos Flexbox para el layout con sidebar */
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px; /* Aumentamos el ancho para acomodar la sidebar */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.content-wrapper {
+    flex-grow: 1; /* El contenido principal ocupa el espacio restante */
+}
